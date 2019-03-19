@@ -1,0 +1,1 @@
+export const REQUEST_COMICS = 'REQUEST_COMICS';
