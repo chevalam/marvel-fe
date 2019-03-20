@@ -4,6 +4,9 @@ import { searchComics } from '../actions';
 import PropTypes from 'prop-types';
 
 class SearchBar extends Component {
+    static propTypes = {
+        searchComics: PropTypes.func.isRequired,
+    }
     state = {
         searchString: ''
     }
@@ -14,11 +17,11 @@ class SearchBar extends Component {
     render() {
     return (
         <div style={{width: '100%'}}>
-            <section>
+            <section style={{alignContent:'center', justifyContent: 'flex-start', display: 'flex'}}>
                 <input
                 type="text"
                 className="input"
-                style={{margin: '20px',padding: '10px', width: '90%'}}
+                style={{padding: '10px', width: '50%'}}
                 id="addInput"
                 placeholder="Enter title to search"
                 value={this.state.searchString}
