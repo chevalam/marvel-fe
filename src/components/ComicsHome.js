@@ -33,15 +33,28 @@ class ComicsHome extends Component {
         const allComics = this.state.pageOfItems.map(post =>
             <div key={post.id} style={{
                 width: '25%',
-                height: '350px',
+                height: '400px',
                 border: '1px solid black',
                 margin: '10px',
-                padding: '20px',
                 cursor: 'pointer',
-                overflowY: 'overlay'
+                overflowY: 'overlay',
+                display: 'flex',
+                flexDirection: 'column',
+                alignContent: 'center',
+                justifyContent: 'space-between'
             }}>
-                <h1>{post.title}</h1>
-                <p>{post.body}</p>
+                <div key={post.id} style={{
+                    height: '350px',
+                    backgroundImage: 'url(' + post.url + ')',
+                    backgroundSize: 'cover'
+                }}>
+                </div>
+                <div style={{
+                    height: '40px',
+                }}>
+                    <p>{post.title}</p>
+                    <p>{new Date(post.date).getFullYear()}</p>
+                </div>
             </div>
         )
         return (
