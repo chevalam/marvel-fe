@@ -9,8 +9,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <SearchBar />
-      <Comics />
+        <h1 style={{ textAlign: 'center' }}>Marvel Comics</h1>
+        <SearchBar />
+        <Comics />
       </div>
     );
   }

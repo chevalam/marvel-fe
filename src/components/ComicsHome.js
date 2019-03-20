@@ -33,10 +33,12 @@ class ComicsHome extends Component {
         const allComics = this.state.pageOfItems.map(post =>
             <div key={post.id} style={{
                 width: '25%',
+                height: '350px',
                 border: '1px solid black',
                 margin: '10px',
                 padding: '20px',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                overflowY: 'overlay'
             }}>
                 <h1>{post.title}</h1>
                 <p>{post.body}</p>
@@ -44,7 +46,6 @@ class ComicsHome extends Component {
         )
         return (
             <div>
-                <h1 style={{ textAlign: 'center' }}>Marvel Comics</h1>
                 <div style={{
                     display: 'flex',
                     flexDirection: 'row',
@@ -53,7 +54,9 @@ class ComicsHome extends Component {
                 }}>
                     {allComics}
                 </div>
-                <Pagination items={this.props.comics} onChangePage={this.onChangePage} />
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <Pagination items={this.props.comics} onChangePage={this.onChangePage} />
+                </div>
             </div>
         )
     }
