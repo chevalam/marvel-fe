@@ -1,5 +1,6 @@
 import {
-    REQUEST_COMICS
+    REQUEST_COMICS,
+    SEARCH_COMICS
   } from './types';
 
   export const requestComics = () => dispatch => {
@@ -10,4 +11,12 @@ import {
         type: REQUEST_COMICS,
         payload: data 
     }));       
+  }
+
+  export const searchComics = (searchString) => dispatch => {
+    console.log('searching in Comics');
+    dispatch({ 
+        type: SEARCH_COMICS,
+        payload: searchString 
+    });       
   }
