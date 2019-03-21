@@ -49,7 +49,6 @@ export default class Pagination extends Component {
 
         // update state
         this.setState({ pager: pager });
-
         // call change page function in parent component
         this.props.onChangePage(pageOfItems);
     }
@@ -105,7 +104,6 @@ export default class Pagination extends Component {
     }
     render() {
         var pager = this.state.pager;
-
         if (!pager.pages || pager.pages.length <= 1) {
             // don't display pager if there is only 1 page
             return null;

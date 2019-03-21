@@ -19,19 +19,8 @@ class ComicsHome extends Component {
         this.props.requestComics();
     }
     render() {
-        // const allComics = this.props.comics.map(post =>
-        //     <div key={post.id} style={{
-        //         width: '25%',
-        //         border: '1px solid black',
-        //         margin: '10px',
-        //         padding: '20px',
-        //         cursor: 'pointer'
-        //     }}>
-        //         <h1>{post.title}</h1>
-        //         <p>{post.body}</p>
-        //     </div>)
         const allComics = this.state.pageOfItems.map(post =>
-            <div key={post.id} style={{
+            <div key={post.title} style={{
                 width: '25%',
                 height: '400px',
                 border: '1px solid black',
@@ -43,14 +32,15 @@ class ComicsHome extends Component {
                 alignContent: 'center',
                 justifyContent: 'space-between'
             }}>
-                <div key={post.id} style={{
-                    height: '350px',
+                <div style={{
+                    height: '80%',
                     backgroundImage: 'url(' + post.url + ')',
                     backgroundSize: 'cover'
                 }}>
                 </div>
                 <div style={{
-                    height: '40px',
+                    height: '20%',
+                    padding: '5px'
                 }}>
                     <p>{post.title}</p>
                     <p>{new Date(post.date).getFullYear()}</p>
