@@ -1,2 +1,3 @@
-export const REQUEST_COMICS = 'REQUEST_COMICS';
-export const SEARCH_COMICS = 'SEARCH_COMICS';
+export const REQUEST_COMICS = "REQUEST_COMICS";
+export const SEARCH_COMICS = "SEARCH_COMICS";
+export const SORT_COMICS = "SORT_COMICS";

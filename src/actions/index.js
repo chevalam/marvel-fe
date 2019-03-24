@@ -1,23 +1,25 @@
-import {
-  REQUEST_COMICS,
-  SEARCH_COMICS
-} from './types';
+import { REQUEST_COMICS, SEARCH_COMICS, SORT_COMICS } from "./types";
 
 export const requestComics = () => dispatch => {
-  console.log('fetching in requestComics');
-
-  fetch('http://localhost:3000/cover')
+  fetch("http://localhost:3000/cover")
     .then(res => res.json())
-    .then(data => dispatch({
-      type: REQUEST_COMICS,
-      payload: data.posts
-    }));
-}
+    .then(data =>
+      dispatch({
+        type: REQUEST_COMICS,
+        payload: data.posts
+      })
+    );
+};
 
-export const searchComics = (searchString) => dispatch => {
-  console.log('searching in Comics');
+export const searchComics = searchString => dispatch => {
   dispatch({
     type: SEARCH_COMICS,
     payload: searchString
   });
-}
+};
+
+export const sortComics = () => dispatch => {
+  dispatch({
+    type: SORT_COMICS
+  });
+};
